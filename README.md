@@ -339,8 +339,9 @@ Access at: https://cloud.langfuse.com
 |---|---|
 | 🤗 Fine-Tuned Model | [faltooz123/qwen1.5-sql-qlora-spider](https://huggingface.co/faltooz123/qwen1.5-sql-qlora-spider) |
 | 📦 Module 1 Repo | [pamuarun/LLM_FINE_TUNING](https://github.com/pamuarun/LLM_FINE_TUNING) |
+| 📊 W&B Experiment | [sql-finetuning project](https://wandb.ai/arunteja962-aispry/sql-finetuning?nw=nwuserarunteja962) |
 | 🚀 Modal Docs | [modal.com/docs](https://modal.com/docs) |
-| 📊 LangFuse | [langfuse.com](https://langfuse.com) |
+| 🔍 LangFuse | [langfuse.com](https://langfuse.com) |
 | 📂 Spider Dataset | [xlangai/spider](https://huggingface.co/datasets/xlangai/spider) |
 
 ---
