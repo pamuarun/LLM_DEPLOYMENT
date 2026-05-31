@@ -1,0 +1,85 @@
+# model_config.yaml
+# -----------------
+# Configuration for the Qwen SQL Generator deployment.
+# Used by modal_deploy.py and client.py
+
+# ── Model Configuration ───────────────────────────────────────────────────────
+model:
+  base_model_id    : "Qwen/Qwen1.5-1.8B-Chat"
+  adapter_id       : "faltooz123/qwen1.5-sql-qlora-spider"
+  max_new_tokens   : 128
+  max_input_chars  : 500
+  context_length   : 512
+  quantization     : "nf4-4bit"
+  compute_dtype    : "float16"
+  do_sample        : false
+  temperature      : 1.0
+
+# ── Deployment Configuration ──────────────────────────────────────────────────
+deployment:
+  platform             : "modal"
+  gpu_type             : "A10G"
+  gpu_memory_gb        : 24
+  cpu_count            : 4
+  memory_gb            : 32
+  timeout_seconds      : 300
+  idle_timeout_seconds : 120
+  min_replicas         : 0
+  max_replicas         : 5
+  concurrency          : 1
+  region               : "us-east-1"
+
+# ── Rate Limiting ─────────────────────────────────────────────────────────────
+rate_limiting:
+  standard_rpm  : 60     # requests per minute
+  standard_burst: 100
+  premium_rpm   : 300
+  premium_burst : 500
+  internal_rpm  : 1000
+  internal_burst: 2000
+
+# ── Monitoring Configuration ──────────────────────────────────────────────────
+monitoring:
+  latency_p50_threshold_ms  : 3000
+  latency_p99_threshold_ms  : 8000
+  error_rate_threshold_pct  : 2.0
+  token_usage_threshold     : 150
+  gpu_utilization_max_pct   : 95
+  gpu_utilization_min_pct   : 10
+  cold_start_threshold_pct  : 20
+  sql_parse_success_min_pct : 80
+  log_retention_days        : 30
+
+# ── Cost Configuration ────────────────────────────────────────────────────────
+cost:
+  gpu_cost_per_hour_usd   : 1.10    # A10G on Modal
+  monthly_request_target  : 25000
+  budget_alert_usd        : 40.00
+  cost_per_1k_requests_usd: 0.62
+
+# ── Security Configuration ────────────────────────────────────────────────────
+security:
+  api_key_prefix     : "sk-sql-"
+  max_question_chars : 500
+  blocked_tokens:
+    - "<|im_start|>"
+    - "<|im_end|>"
+    - "system\n"
+    - "assistant\n"
+    - "IGNORE"
+    - "ignore previous"
+  blocked_db_patterns:
+    - ";"
+    - "--"
+    - "DROP"
+    - "DELETE"
+    - "INSERT"
+    - "UPDATE"
+
+# ── Caching Configuration ─────────────────────────────────────────────────────
+caching:
+  enabled          : true
+  backend          : "redis"
+  ttl_seconds      : 3600      # Cache responses for 1 hour
+  max_cache_size_mb: 512
+  cache_hit_target : 0.25      # Target 25% cache hit rate

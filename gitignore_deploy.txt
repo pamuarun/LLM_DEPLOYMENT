@@ -1,0 +1,34 @@
+# Python environment
+venv/
+deploy_env/
+.venv/
+ENV/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Environment variables (NEVER commit these)
+.env
+*.env
+
+# Test results
+test_results.json
+
+# Modal
+.modal/
+
+# Logs
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
