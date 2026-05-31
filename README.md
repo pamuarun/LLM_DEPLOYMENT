@@ -25,7 +25,7 @@ This repository contains the deployment infrastructure for `faltooz123/qwen1.5-s
 
 > # **📌 Note:** This repository is a **deployment plan and reference implementation**
 > for a Text-to-SQL LLM application. The code demonstrates how the deployment
-> *would* be structured and executed — it has not been deployed to live
+> *would* be structured and executed it has not been deployed to live
 > infrastructure. This is intentional: the project objective is to demonstrate
 > understanding of production LLM deployment patterns, platform selection,
 > cost analysis, and monitoring strategy without incurring actual cloud costs.
