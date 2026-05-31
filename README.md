@@ -1,18 +1,25 @@
-# 🚀 LLM Deployment — Qwen SQL Generator on Modal
-
-<div align="center">
-
+# LLM Deployment — Qwen SQL Generator on Modal
+ 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 [![Modal](https://img.shields.io/badge/Platform-Modal-purple.svg)](https://modal.com)
-[![HuggingFace](https://img.shields.io/badge/🤗-Model%20on%20HF%20Hub-brightgreen)](https://huggingface.co/faltooz123/qwen1.5-sql-qlora-spider)
-
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-Model%20on%20HF%20Hub-brightgreen)](https://huggingface.co/faltooz123/qwen1.5-sql-qlora-spider)
+ 
 **Serverless deployment of a fine-tuned Text-to-SQL model on Modal GPU infrastructure.**
-
-[Quick Start](#-quick-start) • [Deployment](#-deployment) • [Client Usage](#-client-usage) • [Monitoring](#-monitoring)
-
-</div>
-
+ 
+[Quick Start](#quick-start) • [Deployment](#deployment) • [Client Usage](#client-usage) • [Monitoring](#monitoring)
+ 
+---
+ 
+> **Note:** This repository is a **deployment plan and reference implementation**
+> for a Text-to-SQL LLM application. The code demonstrates how the deployment
+> would be structured and executed — it has not been deployed to live
+> infrastructure. This is intentional: the project objective is to demonstrate
+> understanding of production LLM deployment patterns, platform selection,
+> cost analysis, and monitoring strategy without incurring actual cloud costs.
+> All scripts are written to be fully functional and ready to deploy by
+> following the instructions in this README.
+ 
 ---
 
 ## TL;DR
@@ -23,7 +30,7 @@ This repository contains the deployment infrastructure for `faltooz123/qwen1.5-s
 
 ---
 
-> # **📌 Note:** This repository is a **deployment plan and reference implementation**
+>  **📌 Note:** This repository is a **deployment plan and reference implementation**
 > for a Text-to-SQL LLM application. The code demonstrates how the deployment
 > *would* be structured and executed it has not been deployed to live
 > infrastructure. This is intentional: the project objective is to demonstrate
